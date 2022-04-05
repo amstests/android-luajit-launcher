@@ -30,4 +30,6 @@ jobs:
         distribution: 'temurin'
     - name: Build with Gradle
       run: |
+        make update
+        make prepare
         bash ./gradlew assmbleDebug --stacktrace
