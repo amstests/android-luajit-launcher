@@ -27,7 +27,6 @@ jobs:
       uses: nttld/setup-ndk@v1
       with:
         ndk-version: r21e
-    - runs: ndk-build NDK_PROJECT_PATH=. APP_BUILD_SCRIPT=./Android.mk 
     - name: Set up JDK 11
       uses: actions/setup-java@v3
       with:
@@ -35,6 +34,7 @@ jobs:
         distribution: 'temurin'
     - name: Build with Gradle
       run: |
+        ndk-build NDK_PROJECT_PATH=. APP_BUILD_SCRIPT=./Android.mk 
         make update
         make prepare
         bash ./gradlew assmbleDebug --stacktrace
