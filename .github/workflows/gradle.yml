@@ -40,7 +40,7 @@ jobs:
       env:
         ANDROID_NDK_HOME: ${{ steps.setup-ndk.outputs.ndk-path }}
       run: |
-        export NDK=1
+        export NDK=${{ steps.setup-ndk.outputs.ndk-path }}
         make update
         make prepare
         bash ./gradlew assmbleDebug --stacktrace
