@@ -43,4 +43,5 @@ jobs:
         export NDK=${{ steps.setup-ndk.outputs.ndk-path }}
         make update
         make prepare
-        bash ./gradlew assmbleDebug --stacktrace
+        find $ANDROID_NDK_HOME -type f -name "*-cc*"
+#        bash ./gradlew assmbleDebug --stacktrace
