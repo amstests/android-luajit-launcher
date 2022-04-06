@@ -40,13 +40,6 @@ jobs:
       run: |
         sudo apt-get install gcc-multilib g++-multilib
         export NDK=${{ steps.setup-ndk.outputs.ndk-path }}
-        echo NDK ${NDK}
-        OS_TYPE=$(uname | tr A-Z a-z)
-        OS_ARCH=$(uname -m)
-        ls ${NDK}/toolchains/llvm/prebuilt/${OS_TYPE}-${OS_ARCH}
-        echo "[----- Platforms -----]"
-        ls ${NDK}/platforms/android-*/
-        echo [------ Prepare ------]
         make prepare
         make release
         echo "[   Checking Unsigned Apk   ]"
