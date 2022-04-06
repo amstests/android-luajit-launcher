@@ -40,7 +40,9 @@ jobs:
       run: |
         export NDK=${{ steps.setup-ndk.outputs.ndk-path }}
         echo NDK ${NDK}
-        ls ${NDK}/toolchains/llvm/prebuilt/
+        OS_TYPE=$(uname | tr A-Z a-z)
+        OS_ARCH=$(uname -m)
+        ls ${NDK}/toolchains/llvm/prebuilt/${OS_TYPE}-${OS_ARCH}
 #        echo [------ Update -------]
 #        make update
 #        echo [------ Find -------]
