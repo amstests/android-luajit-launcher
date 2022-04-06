@@ -43,6 +43,8 @@ jobs:
         OS_TYPE=$(uname | tr A-Z a-z)
         OS_ARCH=$(uname -m)
         ls ${NDK}/toolchains/llvm/prebuilt/${OS_TYPE}-${OS_ARCH}
+        echo [----- Platforms -----]
+        ls ${NDK}/platforms/android-*/
 #        echo [------ Update -------]
 #        make update
 #        echo [------ Find -------]
