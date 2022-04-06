@@ -33,13 +33,13 @@ jobs:
       uses: actions/setup-java@v3
       with:
         java-version: '11'
-#        distribution: 'temurin'
+        distribution: 'temurin'
     - name: Build with Gradle
       env:
         ANDROID_NDK_HOME: ${{ steps.setup-ndk.outputs.ndk-path }}
       run: |
         export NDK=${{ steps.setup-ndk.outputs.ndk-path }}
-#        make update
+        make update
         make prepare
 #        ls -a ${NDK}/toolchains/*/prebuilt/*
 #        find $ANDROID_NDK_HOME -type f -name "*-cc*"
