@@ -41,7 +41,7 @@ jobs:
         sudo apt-get install gcc-multilib g++-multilib
         export NDK=${{ steps.setup-ndk.outputs.ndk-path }}
         make prepare
-        make release
+        make example
         echo "[   Checking Unsigned Apk   ]"
         find ./bin/ -type f -name "*.apk"
     - name: Upload Artifact
