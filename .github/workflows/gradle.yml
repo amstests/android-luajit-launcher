@@ -48,7 +48,6 @@ jobs:
         ls ${NDK}/platforms/android-*/
         echo [------ Prepare ------]
         make prepare
-#        ls -a ${NDK}/toolchains/*/prebuilt/*
-#        find $ANDROID_NDK_HOME -type f -name "*-cc*"
-#        make prepare
-#        bash ./gradlew assmbleDebug --stacktrace
+        make release
+        [   Checking Unsigned Apk   ]
+        find ./bin/ -type f -name "*.apk"
