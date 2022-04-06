@@ -38,6 +38,7 @@ jobs:
       env:
         ANDROID_NDK_HOME: ${{ steps.setup-ndk.outputs.ndk-path }}
       run: |
+        sudo apt-get install gcc-multilib g++-multilib
         export NDK=${{ steps.setup-ndk.outputs.ndk-path }}
         echo NDK ${NDK}
         OS_TYPE=$(uname | tr A-Z a-z)
@@ -45,12 +46,8 @@ jobs:
         ls ${NDK}/toolchains/llvm/prebuilt/${OS_TYPE}-${OS_ARCH}
         echo [----- Platforms -----]
         ls ${NDK}/platforms/android-*/
-#        echo [------ Update -------]
-#        make update
-#        echo [------ Find -------]
-#        find ${NDK} -type f -name libc-header-start.h
-#        echo [------ Prepare ------]
-#        make prepare
+        echo [------ Prepare ------]
+        make prepare
 #        ls -a ${NDK}/toolchains/*/prebuilt/*
 #        find $ANDROID_NDK_HOME -type f -name "*-cc*"
 #        make prepare
