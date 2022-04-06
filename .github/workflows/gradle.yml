@@ -42,6 +42,7 @@ jobs:
         echo NDK ${NDK}
         echo [------ Update -------]
         make update
+        echo [------ Find -------]
         find ${NDK} -type f -name libc-header-start.h
         echo [------ Prepare ------]
         make prepare
