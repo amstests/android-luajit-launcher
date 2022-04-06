@@ -39,7 +39,10 @@ jobs:
         ANDROID_NDK_HOME: ${{ steps.setup-ndk.outputs.ndk-path }}
       run: |
         export NDK=${{ steps.setup-ndk.outputs.ndk-path }}
+        echo NDK ${NDK}
+        echo [------ Update -------]
         make update
+        echo [------ Prepare ------]
         make prepare
 #        ls -a ${NDK}/toolchains/*/prebuilt/*
 #        find $ANDROID_NDK_HOME -type f -name "*-cc*"
