@@ -49,5 +49,5 @@ jobs:
         echo [------ Prepare ------]
         make prepare
         make release
-        [   Checking Unsigned Apk   ]
+        echo "[   Checking Unsigned Apk   ]"
         find ./bin/ -type f -name "*.apk"
