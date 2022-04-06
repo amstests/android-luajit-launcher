@@ -51,3 +51,8 @@ jobs:
         make release
         echo "[   Checking Unsigned Apk   ]"
         find ./bin/ -type f -name "*.apk"
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: unsigned
+        path: bin
